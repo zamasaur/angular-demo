@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LikeChangedEventArgs } from './like/like.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-demo';
+  title = 'Angular Demo';
+
+  like = {
+    likesCount: 10,
+    isActive: true
+  }
+
+  onLikeChanged(eventArgs: LikeChangedEventArgs){
+    console.log("Like changed", eventArgs);
+  }
 }
